@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-azul-oscuro: #0b0742;
+  --color-morado: #120c6e;
+  --color-azul-medio: #5e72eb;
+  --color-coral: #ff9190;
+  --color-durazno: #fdc994;
+  --color-fondo: #f5f6fc;
+  --color-superficie: #eef1ff;
+  --color-texto: #1f2440;
+  --color-texto-suave: #6b7194;
+  --color-lavanda: #7c83d9;
+  --sombra-panel: 0 24px 60px rgba(16, 15, 64, 0.1);
+  --borde-suave: 1px solid rgba(18, 12, 110, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: 'Aptos', 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  color: var(--color-texto);
+  background:
+    radial-gradient(circle at top left, rgba(253, 201, 148, 0.38), transparent 18%),
+    radial-gradient(circle at top right, rgba(255, 145, 144, 0.16), transparent 16%),
+    radial-gradient(circle at right center, rgba(94, 114, 235, 0.18), transparent 22%),
+    linear-gradient(180deg, #ffffff, var(--color-fondo));
+}
+
+h1,
+h2,
+h3,
+h4,
+strong {
+  font-family: 'Bahnschrift', 'Aptos Display', 'Trebuchet MS', sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}

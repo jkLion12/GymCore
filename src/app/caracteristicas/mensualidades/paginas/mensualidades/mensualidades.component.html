@@ -1,0 +1,37 @@
+<section class="vista">
+  <div class="vista__encabezado">
+    <div>
+      <p class="vista__eyebrow">Mensualidades</p>
+      <h2>Planes, precios y renovaciones</h2>
+    </div>
+    <button type="button">Crear plan</button>
+  </div>
+
+  <div class="planes">
+    @for (plan of planes; track plan.id) {
+      <article class="plan" [class]="'plan--' + plan.color">
+        <p>{{ plan.nombre }}</p>
+        <strong>{{ plan.precio | currency: 'PEN' : 'symbol' : '1.0-0' }}</strong>
+        <span>{{ plan.duracion }}</span>
+        <ul>
+          @for (beneficio of plan.beneficios; track beneficio) {
+            <li>{{ beneficio }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+
+  <app-tabla-datos
+    titulo="Renovaciones priorizadas"
+    descripcion="Clientes por vencer, con deuda o listos para upselling"
+    [columnas]="[
+      { clave: 'cliente', titulo: 'Cliente' },
+      { clave: 'plan', titulo: 'Plan actual' },
+      { clave: 'estado', titulo: 'Estado' },
+      { clave: 'vencimiento', titulo: 'Vence' },
+      { clave: 'deuda', titulo: 'Saldo' }
+    ]"
+    [filas]="renovaciones"
+  />
+</section>

@@ -1,0 +1,50 @@
+<section class="vista">
+  <div class="vista__encabezado">
+    <div>
+      <p class="vista__eyebrow">Reportes</p>
+      <h2>Analitica de asistencia y cobranzas</h2>
+    </div>
+    <button type="button">Descargar PDF</button>
+  </div>
+
+  <div class="metricas">
+    @for (item of indicadores; track item.titulo) {
+      <app-tarjeta-metrica
+        [titulo]="item.titulo"
+        [valor]="item.valor"
+        [descripcion]="item.descripcion"
+        [variacion]="item.variacion"
+        [color]="item.color"
+      />
+    }
+  </div>
+
+  <div class="vista__grid">
+    <app-bloque-estado
+      titulo="Asistencia acumulada"
+      descripcion="Lectura rapida del rendimiento semanal"
+      [elementos]="gimnasioServicio.asistenciaSemanal"
+      color="azul"
+    />
+
+    <app-bloque-estado
+      titulo="Ingresos comparados"
+      descripcion="Comportamiento mensual de ventas"
+      [elementos]="gimnasioServicio.ingresosMensuales"
+      color="coral"
+    />
+  </div>
+
+  <app-tabla-datos
+    titulo="Reporte consolidado por cliente"
+    descripcion="Cruce de plan, uso del servicio y deuda pendiente"
+    [columnas]="[
+      { clave: 'cliente', titulo: 'Cliente' },
+      { clave: 'plan', titulo: 'Plan' },
+      { clave: 'asistencia', titulo: 'Asistencia' },
+      { clave: 'estado', titulo: 'Estado' },
+      { clave: 'deuda', titulo: 'Deuda' }
+    ]"
+    [filas]="reporteClientes"
+  />
+</section>

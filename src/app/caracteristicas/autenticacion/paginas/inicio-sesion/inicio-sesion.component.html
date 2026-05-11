@@ -1,0 +1,49 @@
+<section class="login">
+  <div class="login__hero">
+    <p class="etiqueta">Gestion integral para gimnasios</p>
+    <h1>Administra clientes, mensualidades, asistencias, pagos y reportes desde una sola plataforma.</h1>
+    <p class="descripcion">
+      Una experiencia moderna para recepcion, administracion y seguimiento comercial del gimnasio.
+    </p>
+
+    <div class="estadisticas">
+      <article>
+        <strong>+450</strong>
+        <span>registros listos para escalar</span>
+      </article>
+      <article>
+        <strong>24/7</strong>
+        <span>control visual de operaciones</span>
+      </article>
+      <article>
+        <strong>100%</strong>
+        <span>interfaz modular en Angular</span>
+      </article>
+    </div>
+  </div>
+
+  <form class="login__panel">
+    <div>
+      <p class="etiqueta">Bienvenido</p>
+      <h2>Iniciar sesion</h2>
+      <span>Accede al panel principal del gimnasio</span>
+    </div>
+
+    <label>
+      <span>Correo</span>
+      <input [(ngModel)]="correo" name="correo" type="email" />
+    </label>
+
+    <label>
+      <span>Contrasena</span>
+      <input [(ngModel)]="clave" name="clave" type="password" />
+    </label>
+
+    <div class="login__recordatorio">
+      <span>Usuario demo listo para navegar</span>
+      <a routerLink="/sistema/panel">Ingresar al sistema</a>
+    </div>
+
+    <button type="button" routerLink="/sistema/panel">Entrar al panel</button>
+  </form>
+</section>

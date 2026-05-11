@@ -1,0 +1,50 @@
+<section class="vista">
+  <div class="vista__encabezado">
+    <div>
+      <p class="vista__eyebrow">Panel general</p>
+      <h2>Resumen operativo del gimnasio</h2>
+    </div>
+    <button type="button">Generar corte diario</button>
+  </div>
+
+  <div class="metricas">
+    @for (item of indicadores; track item.titulo) {
+      <app-tarjeta-metrica
+        [titulo]="item.titulo"
+        [valor]="item.valor"
+        [descripcion]="item.descripcion"
+        [variacion]="item.variacion"
+        [color]="item.color"
+      />
+    }
+  </div>
+
+  <div class="vista__grid">
+    <app-bloque-estado
+      titulo="Asistencia semanal"
+      descripcion="Comparativo de flujo frente a la meta diaria"
+      [elementos]="tendencia"
+      color="azul"
+    />
+
+    <app-bloque-estado
+      titulo="Ingresos mensuales"
+      descripcion="Evolucion de cobranzas registradas"
+      [elementos]="ingresos"
+      color="coral"
+    />
+  </div>
+
+  <app-tabla-datos
+    titulo="Clientes por renovar o regularizar"
+    descripcion="Prioridad comercial y de seguimiento para la recepcion"
+    [columnas]="[
+      { clave: 'nombre', titulo: 'Cliente' },
+      { clave: 'plan', titulo: 'Plan' },
+      { clave: 'estado', titulo: 'Estado' },
+      { clave: 'vencimiento', titulo: 'Vencimiento' },
+      { clave: 'deuda', titulo: 'Deuda' }
+    ]"
+    [filas]="clientesPorVencer"
+  />
+</section>

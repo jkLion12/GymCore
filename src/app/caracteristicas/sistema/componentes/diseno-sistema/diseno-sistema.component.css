@@ -1,0 +1,20 @@
+.sistema {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 1.35rem;
+  min-height: 100vh;
+  padding: 1.15rem;
+}
+
+.sistema__contenido {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  padding: 0.15rem 0 1rem;
+}
+
+@media (max-width: 1100px) {
+  .sistema {
+    grid-template-columns: 1fr;
+  }
+}

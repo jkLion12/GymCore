@@ -1,0 +1,38 @@
+<section class="vista">
+  <div class="vista__encabezado">
+    <div>
+      <p class="vista__eyebrow">Asistencias</p>
+      <h2>Monitoreo y registro de accesos</h2>
+    </div>
+    <button type="button">Registrar manualmente</button>
+  </div>
+
+  <div class="vista__grid">
+    <app-bloque-estado
+      titulo="Horas pico"
+      descripcion="Distribucion estimada de afluencia por turno"
+      [elementos]="horasPico"
+      color="coral"
+    />
+
+    <app-bloque-estado
+      titulo="Rendimiento semanal"
+      descripcion="Cumplimiento frente a meta de asistencia"
+      [elementos]="gimnasioServicio.asistenciaSemanal"
+      color="azul"
+    />
+  </div>
+
+  <app-tabla-datos
+    titulo="Registro diario"
+    descripcion="Entradas y salidas del dia por area"
+    [columnas]="[
+      { clave: 'cliente', titulo: 'Cliente' },
+      { clave: 'fecha', titulo: 'Fecha' },
+      { clave: 'hora', titulo: 'Hora' },
+      { clave: 'acceso', titulo: 'Movimiento' },
+      { clave: 'area', titulo: 'Area' }
+    ]"
+    [filas]="registros"
+  />
+</section>

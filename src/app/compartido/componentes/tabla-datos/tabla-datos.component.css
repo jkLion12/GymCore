@@ -1,0 +1,75 @@
+.tabla {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 1.35rem;
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9)),
+    white;
+  border: var(--borde-suave);
+  box-shadow: var(--sombra-panel);
+}
+
+.tabla__encabezado {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.tabla__encabezado h3,
+.tabla__encabezado p {
+  margin: 0;
+}
+
+.tabla__encabezado p {
+  color: var(--color-texto-suave);
+}
+
+.tabla__encabezado button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  background: linear-gradient(135deg, var(--color-azul-oscuro), var(--color-azul-medio));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(18, 12, 110, 0.14);
+}
+
+.tabla__contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 1rem 0.85rem;
+  border-bottom: 1px solid rgba(18, 12, 110, 0.08);
+}
+
+th {
+  color: var(--color-texto-suave);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+td {
+  color: var(--color-texto);
+  font-weight: 500;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: rgba(94, 114, 235, 0.05);
+}

@@ -1,0 +1,24 @@
+<section class="bloque">
+  <div class="bloque__encabezado">
+    <h3>{{ titulo() }}</h3>
+    <p>{{ descripcion() }}</p>
+  </div>
+
+  <div class="bloque__lista">
+    @for (item of elementos(); track item.etiqueta) {
+      <div class="item">
+        <div class="item__texto">
+          <strong>{{ item.etiqueta }}</strong>
+          <span>{{ item.valor }}</span>
+        </div>
+        <div class="item__barra">
+          <div
+            class="item__progreso"
+            [class]="'item__progreso item__progreso--' + color()"
+            [style.width.%]="item.meta ? (item.valor / item.meta) * 100 : item.valor / 100"
+          ></div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

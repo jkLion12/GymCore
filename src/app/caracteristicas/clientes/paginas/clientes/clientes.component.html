@@ -1,0 +1,35 @@
+<section class="vista">
+  <div class="vista__encabezado">
+    <div>
+      <p class="vista__eyebrow">Clientes</p>
+      <h2>Control integral de socios</h2>
+    </div>
+    <button type="button">Nuevo cliente</button>
+  </div>
+
+  <div class="metricas">
+    @for (item of indicadores; track item.titulo) {
+      <app-tarjeta-metrica
+        [titulo]="item.titulo"
+        [valor]="item.valor"
+        [descripcion]="item.descripcion"
+        [variacion]="item.variacion"
+        [color]="item.color"
+      />
+    }
+  </div>
+
+  <app-tabla-datos
+    titulo="Padron de clientes"
+    descripcion="Seguimiento de vigencia, asistencia y ultimo pago"
+    [columnas]="[
+      { clave: 'nombre', titulo: 'Cliente' },
+      { clave: 'plan', titulo: 'Plan' },
+      { clave: 'estado', titulo: 'Estado' },
+      { clave: 'ultimoPago', titulo: 'Ultimo pago' },
+      { clave: 'vencimiento', titulo: 'Vencimiento' },
+      { clave: 'asistenciaMes', titulo: 'Asistencia mes' }
+    ]"
+    [filas]="clientes"
+  />
+</section>

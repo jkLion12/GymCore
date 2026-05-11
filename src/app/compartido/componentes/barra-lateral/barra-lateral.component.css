@@ -1,0 +1,325 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.barra-lateral {
+  position: sticky;
+  top: 1.15rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  min-height: calc(100vh - 2.3rem);
+  padding: 1.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2.15rem;
+  background:
+    radial-gradient(circle at top right, rgba(255, 145, 144, 0.2), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(94, 114, 235, 0.24), transparent 30%),
+    linear-gradient(180deg, rgba(18, 12, 110, 0.98), rgba(11, 7, 66, 1)),
+    var(--color-azul-oscuro);
+  color: white;
+  box-shadow:
+    0 32px 70px rgba(11, 7, 66, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.barra-lateral__halo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.barra-lateral__halo--uno {
+  top: -2rem;
+  right: -1rem;
+  width: 7rem;
+  height: 7rem;
+  background: rgba(255, 145, 144, 0.22);
+}
+
+.barra-lateral__halo--dos {
+  left: -2rem;
+  bottom: 6rem;
+  width: 8rem;
+  height: 8rem;
+  background: rgba(94, 114, 235, 0.2);
+}
+
+.marca,
+.barra-lateral__resumen,
+.menu__bloque,
+.barra-lateral__tarjeta {
+  position: relative;
+  z-index: 1;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.marca__logo {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(253, 201, 148, 0.88));
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+}
+
+.marca__logo svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.marca__logo path:first-child {
+  fill: var(--color-azul-oscuro);
+}
+
+.marca__logo path:last-child {
+  stroke: var(--color-coral);
+  stroke-width: 1.8;
+}
+
+.marca__texto {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.marca__eyebrow,
+.barra-lateral__tarjeta .etiqueta {
+  margin: 0 0 0.2rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.marca h1,
+.barra-lateral__tarjeta strong {
+  margin: 0;
+  font-size: 1.22rem;
+}
+
+.marca__texto span {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.84rem;
+}
+
+.barra-lateral__resumen {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.barra-lateral__resumen div {
+  padding: 0.95rem 0.95rem 1rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.barra-lateral__resumen strong,
+.barra-lateral__resumen span {
+  display: block;
+}
+
+.barra-lateral__resumen strong {
+  margin-bottom: 0.15rem;
+  font-size: 1.35rem;
+}
+
+.barra-lateral__resumen span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+
+.menu__titulo {
+  margin: 0 0 0.7rem;
+  padding-left: 0.25rem;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.menu__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1.15rem;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition:
+    transform 0.24s ease,
+    background 0.24s ease,
+    color 0.24s ease,
+    border-color 0.24s ease;
+  border: 1px solid transparent;
+}
+
+.menu__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.09), transparent 68%);
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+
+.menu__item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  transform: translateX(4px);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.menu__item:hover::after,
+.menu__item--activo::after {
+  opacity: 1;
+}
+
+.menu__icono {
+  position: relative;
+  z-index: 1;
+  width: 2.9rem;
+  height: 2.9rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.menu__icono svg {
+  width: 1.22rem;
+  height: 1.22rem;
+}
+
+.menu__icono path {
+  fill: rgba(255, 255, 255, 0.95);
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 1.7;
+}
+
+.menu__contenido {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.12rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.menu__contenido strong,
+.menu__contenido small {
+  display: block;
+}
+
+.menu__contenido strong {
+  font-size: 0.95rem;
+}
+
+.menu__contenido small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.79rem;
+}
+
+.menu__flecha {
+  position: relative;
+  z-index: 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  opacity: 0.45;
+  transition: transform 0.24s ease, opacity 0.24s ease;
+}
+
+.menu__flecha svg {
+  width: 100%;
+  height: 100%;
+}
+
+.menu__flecha path {
+  stroke: rgba(255, 255, 255, 0.88);
+  stroke-width: 1.8;
+}
+
+.menu__item--activo {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
+  color: white;
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(6px);
+  box-shadow: 0 18px 28px rgba(5, 2, 32, 0.18);
+}
+
+.menu__item--activo .menu__icono {
+  background: linear-gradient(145deg, rgba(255, 145, 144, 0.88), rgba(253, 201, 148, 0.88));
+}
+
+.menu__item--activo .menu__icono path {
+  fill: var(--color-azul-oscuro);
+  stroke: var(--color-azul-oscuro);
+}
+
+.menu__item:hover .menu__flecha,
+.menu__item--activo .menu__flecha {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.barra-lateral__tarjeta {
+  margin-top: auto;
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.15rem;
+  border-radius: 1.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, rgba(94, 114, 235, 0.28), rgba(255, 201, 148, 0.12));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.barra-lateral__tarjeta span {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.45;
+}
+
+.barra-lateral__estado {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.2rem;
+}
+
+.punto {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: #86f2b0;
+  box-shadow: 0 0 0 0.3rem rgba(134, 242, 176, 0.16);
+}
+
+.barra-lateral__estado small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1100px) {
+  .barra-lateral {
+    position: relative;
+    min-height: auto;
+  }
+}

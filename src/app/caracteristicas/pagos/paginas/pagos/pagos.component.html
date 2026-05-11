@@ -1,0 +1,35 @@
+<section class="vista">
+  <div class="vista__encabezado">
+    <div>
+      <p class="vista__eyebrow">Pagos</p>
+      <h2>Registro y control de cobranzas</h2>
+    </div>
+    <button type="button">Registrar pago</button>
+  </div>
+
+  <div class="metricas">
+    @for (item of indicadores; track item.titulo) {
+      <app-tarjeta-metrica
+        [titulo]="item.titulo"
+        [valor]="item.valor"
+        [descripcion]="item.descripcion"
+        [variacion]="item.variacion"
+        [color]="item.color"
+      />
+    }
+  </div>
+
+  <app-tabla-datos
+    titulo="Movimientos de caja"
+    descripcion="Control detallado por cliente, concepto y metodo de pago"
+    [columnas]="[
+      { clave: 'cliente', titulo: 'Cliente' },
+      { clave: 'concepto', titulo: 'Concepto' },
+      { clave: 'monto', titulo: 'Monto' },
+      { clave: 'metodo', titulo: 'Metodo' },
+      { clave: 'fecha', titulo: 'Fecha' },
+      { clave: 'estado', titulo: 'Estado' }
+    ]"
+    [filas]="pagos"
+  />
+</section>

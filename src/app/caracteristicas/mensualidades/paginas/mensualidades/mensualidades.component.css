@@ -1,0 +1,87 @@
+.vista,
+.planes {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.vista__encabezado {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.vista__eyebrow {
+  margin: 0 0 0.2rem;
+  color: var(--color-lavanda);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vista__encabezado h2,
+.plan p,
+.plan span {
+  margin: 0;
+}
+
+.vista__encabezado button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.2rem;
+  background: var(--color-durazno);
+  color: var(--color-azul-oscuro);
+  font-weight: 800;
+}
+
+.planes {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.plan {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.35rem;
+  border-radius: 1.6rem;
+  background: white;
+  border: 1px solid rgba(18, 12, 110, 0.08);
+  box-shadow: 0 18px 40px rgba(18, 12, 110, 0.08);
+}
+
+.plan strong {
+  font-size: 1.9rem;
+}
+
+.plan span {
+  color: var(--color-texto-suave);
+}
+
+.plan ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+.plan--azul {
+  background: linear-gradient(180deg, rgba(11, 7, 66, 0.08), white 50%);
+}
+
+.plan--morado {
+  background: linear-gradient(180deg, rgba(18, 12, 110, 0.08), white 50%);
+}
+
+.plan--coral {
+  background: linear-gradient(180deg, rgba(255, 145, 144, 0.12), white 50%);
+}
+
+.plan--durazno {
+  background: linear-gradient(180deg, rgba(253, 201, 148, 0.18), white 50%);
+}
+
+@media (max-width: 1100px) {
+  .vista__encabezado,
+  .planes {
+    grid-template-columns: 1fr;
+  }
+}

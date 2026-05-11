@@ -1,0 +1,113 @@
+<aside class="barra-lateral">
+  <div class="barra-lateral__halo barra-lateral__halo--uno"></div>
+  <div class="barra-lateral__halo barra-lateral__halo--dos"></div>
+
+  <div class="marca">
+    <div class="marca__logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M7 11.5C7 9.57 8.57 8 10.5 8H21.5C23.43 8 25 9.57 25 11.5V20.5C25 22.43 23.43 24 21.5 24H10.5C8.57 24 7 22.43 7 20.5V11.5Z"
+        />
+        <path d="M11 16H21M16 11V21" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <div class="marca__texto">
+      <p class="marca__eyebrow">Gestion integral</p>
+      <h1>GymCore Pro</h1>
+      <span>Administracion de gimnasio</span>
+    </div>
+  </div>
+
+  <div class="barra-lateral__resumen">
+    <div>
+      <strong>245</strong>
+      <span>Socios vigentes</span>
+    </div>
+    <div>
+      <strong>18</strong>
+      <span>Alertas del dia</span>
+    </div>
+  </div>
+
+  <div class="menu__bloque">
+    <p class="menu__titulo">Operaciones</p>
+
+    <nav class="menu">
+      @for (item of menu; track item.ruta) {
+        <a
+          class="menu__item"
+          [routerLink]="item.ruta"
+          routerLinkActive="menu__item--activo"
+        >
+          <span class="menu__icono" aria-hidden="true">
+            @switch (item.icono) {
+              @case ('panel') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 5.5C4 4.67 4.67 4 5.5 4H10.5C11.33 4 12 4.67 12 5.5V10.5C12 11.33 11.33 12 10.5 12H5.5C4.67 12 4 11.33 4 10.5V5.5Z" />
+                  <path d="M13 5.5C13 4.67 13.67 4 14.5 4H18.5C19.33 4 20 4.67 20 5.5V8.5C20 9.33 19.33 10 18.5 10H14.5C13.67 10 13 9.33 13 8.5V5.5Z" />
+                  <path d="M13 14.5C13 13.67 13.67 13 14.5 13H18.5C19.33 13 20 13.67 20 14.5V18.5C20 19.33 19.33 20 18.5 20H14.5C13.67 20 13 19.33 13 18.5V14.5Z" />
+                  <path d="M4 15.5C4 14.67 4.67 14 5.5 14H10.5C11.33 14 12 14.67 12 15.5V18.5C12 19.33 11.33 20 10.5 20H5.5C4.67 20 4 19.33 4 18.5V15.5Z" />
+                </svg>
+              }
+              @case ('clientes') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51472 3 7.5 5.01472 7.5 7.5C7.5 9.98528 9.51472 12 12 12Z" />
+                  <path d="M5 19.5C5 16.7386 8.13401 14.5 12 14.5C15.866 14.5 19 16.7386 19 19.5V20.25C19 20.6642 18.6642 21 18.25 21H5.75C5.33579 21 5 20.6642 5 20.25V19.5Z" />
+                </svg>
+              }
+              @case ('membresias') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 6.5C6 5.67157 6.67157 5 7.5 5H16.5C17.3284 5 18 5.67157 18 6.5V17.5C18 18.3284 17.3284 19 16.5 19H7.5C6.67157 19 6 18.3284 6 17.5V6.5Z" />
+                  <path d="M8.5 9H15.5M8.5 12H15.5M8.5 15H12.5" fill="none" stroke-linecap="round" />
+                </svg>
+              }
+              @case ('asistencias') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" />
+                  <path d="M12 7V12L15.5 14" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              }
+              @case ('pagos') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" />
+                  <path d="M4 10H20M8 14H10.5" fill="none" stroke-linecap="round" />
+                </svg>
+              }
+              @case ('reportes') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 18.5C6 17.6716 6.67157 17 7.5 17H8.5C9.32843 17 10 17.6716 10 18.5V19.5C10 20.3284 9.32843 21 8.5 21H7.5C6.67157 21 6 20.3284 6 19.5V18.5Z" />
+                  <path d="M11 13.5C11 12.6716 11.6716 12 12.5 12H13.5C14.3284 12 15 12.6716 15 13.5V19.5C15 20.3284 14.3284 21 13.5 21H12.5C11.6716 21 11 20.3284 11 19.5V13.5Z" />
+                  <path d="M16 9.5C16 8.67157 16.6716 8 17.5 8H18.5C19.3284 8 20 8.67157 20 9.5V19.5C20 20.3284 19.3284 21 18.5 21H17.5C16.6716 21 16 20.3284 16 19.5V9.5Z" />
+                  <path d="M5 4L11 9L15 6L20 10" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              }
+            }
+          </span>
+
+          <span class="menu__contenido">
+            <strong>{{ item.etiqueta }}</strong>
+            <small>{{ item.ayuda }}</small>
+          </span>
+
+          <span class="menu__flecha" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 6L15 12L9 18" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      }
+    </nav>
+  </div>
+
+  <div class="barra-lateral__tarjeta">
+    <p class="etiqueta">Turno actual</p>
+    <strong>Recepcion central</strong>
+    <span>Monitoreo de acceso, renovaciones y cobranzas en tiempo real.</span>
+
+    <div class="barra-lateral__estado">
+      <span class="punto"></span>
+      <small>Sistema operativo y estable</small>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,30 @@
+<section class="tabla">
+  <div class="tabla__encabezado">
+    <div>
+      <h3>{{ titulo() }}</h3>
+      <p>{{ descripcion() }}</p>
+    </div>
+    <button type="button">Exportar</button>
+  </div>
+
+  <div class="tabla__contenedor">
+    <table>
+      <thead>
+        <tr>
+          @for (columna of columnas(); track columna.clave) {
+            <th>{{ columna.titulo }}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (fila of filas(); track $index) {
+          <tr>
+            @for (columna of columnas(); track columna.clave) {
+              <td>{{ fila[columna.clave] }}</td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

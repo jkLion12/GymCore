@@ -1,0 +1,44 @@
+.vista,
+.vista__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.vista__encabezado {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.vista__eyebrow {
+  margin: 0 0 0.2rem;
+  color: var(--color-lavanda);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vista__encabezado h2 {
+  margin: 0;
+}
+
+.vista__encabezado button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.2rem;
+  background: var(--color-coral);
+  color: var(--color-azul-oscuro);
+  font-weight: 800;
+}
+
+.vista__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 980px) {
+  .vista__encabezado,
+  .vista__grid {
+    grid-template-columns: 1fr;
+  }
+}
